@@ -1,13 +1,162 @@
+/* Basic global styles */
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #222;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+  background-color: #1877f2;
+  padding: 10px 20px;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  margin-right: 15px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h3 {
+  margin-top: 0;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Home page layout */
+.home-container {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
+/* Friends list sidebar */
+.friends-list {
+  width: 300px;
+  background-color: white;
+  border-right: 1px solid #ccc;
+  overflow-y: auto;
+}
+
+.friends-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.friends-list li {
+  border-bottom: 1px solid #eee;
+}
+
+.friends-list button {
+  width: 100%;
+  padding: 12px 15px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.friends-list button:hover,
+.friends-list button:focus {
+  background-color: #f0f2f5;
+  outline: none;
+}
+
+/* Chat area */
+.chat-area {
+  flex-grow: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.chat-area h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.messages-container {
+  flex-grow: 1;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 10px;
+  background: #fafafa;
+}
+
+.message {
+  margin-bottom: 10px;
+  max-width: 70%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  clear: both;
+  word-wrap: break-word;
+}
+
+.message.you {
+  background-color: #1877f2;
+  color: white;
+  float: right;
+}
+
+.message.friend {
+  background-color: #e4e6eb;
+  float: left;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+.chat-input input[type="text"] {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  background-color: #1877f2;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #165cdb;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .friends-list {
+    width: 100%;
+    height: 150px;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .chat-area {
+    height: auto;
+  }
 }
